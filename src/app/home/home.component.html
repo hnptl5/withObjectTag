@@ -1,5 +1,6 @@
 <p>
   home works!
 </p>
-<button type="button" (click)="loadComponent()">next</button>
+<a [routerLink]="['users']" (click)='loadComponent("users")'>next</a>
 <div #testOutlet></div>
+

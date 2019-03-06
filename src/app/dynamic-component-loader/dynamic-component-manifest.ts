@@ -16,5 +16,7 @@ export interface DynamicComponentManifest {
   path: string;
 
   /** Path to component module. */
-  loadChildren: string;
+  loadChildren?: string;
+
+  children?: string;
 }
