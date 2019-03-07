@@ -8,6 +8,8 @@ import { Test2Component} from './test2/test2.component';
 // import { DynamicComponentManifest} from './../dynamic-component-loader/dynamic-component-manifest';
 
 const routes: Routes = [
+//  {path: '', redirectTo: 'test', pathMatch: 'full'},
+{path: '', component: UsersComponent},
     {   
         path: 'test',
         component: TestComponent

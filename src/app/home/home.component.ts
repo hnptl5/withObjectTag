@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewContainerRef, AfterViewInit} from '@angular/core';
-import { DynamicComponentLoader } from './../dynamic-component-loader/dynamic-component-loader.service';
+// import { DynamicComponentLoader } from './../dynamic-component-loader/dynamic-component-loader.service';
 import { Router, ActivatedRoute, Route } from '@angular/router';
 import { Injectable, Compiler } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
@@ -19,7 +19,7 @@ export class HomeComponent {
 
   existingRoutes: BehaviorSubject<Route[]>;
 
-  constructor(private dynamicComponentLoader: DynamicComponentLoader, 
+  constructor(
         private route: ActivatedRoute, 
         private router: Router, 
         private compiler: Compiler) { 
@@ -35,28 +35,28 @@ export class HomeComponent {
 
   // ngAfterViewInit (){
   //   this.loadComponent('users');
+  // // }
+
+  // loadComponent(url:any) {
+  //   let self=this;
+  //   this.dynamicComponentLoader
+  //     .getComponentFactory(url)
+  //     .subscribe({
+  //       next: componentFactory => {
+  //         if (!this.testOutlet) {
+  //           return;
+  //         }
+
+  //         const ref = this.testOutlet.createComponent(componentFactory);
+  //         ref.changeDetectorRef.detectChanges();
+  //         // this.createAndRegisterRoute();
+  //         // this.router.navigate(["users"], {relativeTo: self.route})
+  //       },
+  //       error: err => {
+  //         console.warn(err);
+  //       }
+  //     });
   // }
-
-  loadComponent(url:any) {
-    let self=this;
-    this.dynamicComponentLoader
-      .getComponentFactory(url)
-      .subscribe({
-        next: componentFactory => {
-          if (!this.testOutlet) {
-            return;
-          }
-
-          const ref = this.testOutlet.createComponent(componentFactory);
-          ref.changeDetectorRef.detectChanges();
-          // this.createAndRegisterRoute();
-          // this.router.navigate(["users"], {relativeTo: self.route})
-        },
-        error: err => {
-          console.warn(err);
-        }
-      });
-  }
 
     private get routes(): Route[]{
         var routesToReturn = this.router.config;

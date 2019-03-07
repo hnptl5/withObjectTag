@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { DynamicComponentLoader } from './../dynamic-component-loader/dynamic-component-loader.service';
-import { Router, ActivatedRoute, Route } from '@angular/router';
-import { Injectable, Compiler } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Component } from '@angular/core';
+// import { DynamicComponentLoader } from './../dynamic-component-loader/dynamic-component-loader.service';
+// import { Router, ActivatedRoute, Route } from '@angular/router';
+// import { Injectable, Compiler } from '@angular/core';
+// import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-users',
@@ -12,13 +12,13 @@ import { BehaviorSubject } from 'rxjs';
 export class UsersComponent {
 
 
-  constructor(private dynamicComponentLoader: DynamicComponentLoader){
-        
+  constructor(){
+        console.log('component has been loaded');
   }
 
-  ngOnInit() {
-    // this.loadComponent(this.route.url);
-  }
+  // ngOnInit() {
+  //   // this.loadComponent(this.route.url);
+  // }
 
   // ngAfterViewInit (){
   //   this.loadComponent('users');
